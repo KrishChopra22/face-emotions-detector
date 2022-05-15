@@ -3,10 +3,10 @@ const video = document.getElementById('video')
 
 // Promise ensures that video will be only started after loading all the models
 Promise.all([
-  faceapi.nets.tinyFaceDetector.loadFromUri('/models'),
-  faceapi.nets.faceLandmark68Net.loadFromUri('/models'),
-  faceapi.nets.faceRecognitionNet.loadFromUri('/models'),
-  faceapi.nets.faceExpressionNet.loadFromUri('/models')
+  faceapi.nets.tinyFaceDetector.loadFromUri('/face-emotions-detector/models'),
+  faceapi.nets.faceLandmark68Net.loadFromUri('/face-emotions-detector/models'),
+  faceapi.nets.faceRecognitionNet.loadFromUri('/face-emotions-detector/models'),
+  faceapi.nets.faceExpressionNet.loadFromUri('/face-emotions-detector/models')
 ]).then(startVideo).catch(err => console.error(err))
 
 // function to start the video, by getting the media(video, streaming)
